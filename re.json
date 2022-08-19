@@ -1,0 +1,164 @@
+{
+    "id": "182b44443df453ca", 
+    "threadId": "182b44443df453ca", 
+    "labelIds": ["UNREAD", "IMPORTANT", "CATEGORY_PERSONAL", "INBOX"],
+    "snippet": "iPhoneから送信",
+    "payload": {"partId": "", 
+    "mimeType": "text/plain", 
+    "filename": "", 
+    "headers": [
+    {
+        "name": "Delivered-To", 
+        "value": "intern.ohg.24a@gmail.com"}, 
+    {
+        "name": "Received", 
+        "value": "by 2002:a2e:9c41:0:0:0:0:0 with SMTP id t1csp414955ljj;        Thu, 18 Aug 2022 21:02:29 -0700 (PDT)"}, 
+    {
+        "name": "X-Google-Smtp-Source", 
+        "value": "AA6agR751N4YdkvPBSB4wPRk6NBmw6ux/90DuoMOn6xz19PhyU1IClhWiNoEbE5nndq4mPBSWWpo"}, 
+    {   
+        "name": "X-Received", 
+        "value": "by 2002:a63:1e64:0:b0:429:7f02:79b4 with SMTP id p36-20020a631e64000000b004297f0279b4mr4947427pgm.435.1660881748787;        Thu, 18 Aug 2022 21:02:28 -0700 (PDT)"}, 
+    {
+        "name": "ARC-Seal", 
+        "value": "i=2; a=rsa-sha256; t=1660881748; cv=pass;        d=google.com; s=arc-20160816;        b=uzriLHp/wYaFviW6wC2gd6OkgYmIhq3cdy6MPs8+1zIeU8fEKfFYxetrNMnAv7ApZg         Ije+HXtTyPM8CUsYFEWqaUEfFTF7FFGhi4V2TzimY44j1gPuRJpRO3DvLj25OS6BPKbV         OLbbIxj6bTd9BfxPsZpV6qUePTERDg4l729/FrqhpY2+HgfDsG8DkLNUuIf04e9KXlDj         YNiMRCM8gf7fhxWxnN1ihU0x+ZCMIPstOPmLhSiLCY8m7PvdGsAS0GFkpaYKLDV+6PuB         r5PbPIe8Oc02p4iSLEn1bmw2MGT00KPtZiqfh74njPw8jCjKrWR73F9MJ/vBc9ggMJ68         1U/A=="}, 
+    {
+        "name": "ARC-Message-Signature", 
+        "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=mime-version:content-transfer-encoding:content-id:content-language         :accept-language:message-id:date:thread-index:thread-topic:subject         :to:from;        bh=jOgpzlWbKMvPggN8x4MRA7uuXA3q98FlFK3jP24fAZA=;        b=PJGBu2usqX5l6VgKXS38p2+SFsZFgQSgAuTjnvDB+vGyvtDlDbXAxqdglDpStzG9IB         gDEJ8/KQjWoT92T5JXktPMQ9WrCX6mv1s1tVh4cKLzb7GNwIe3GjJhslWYdDb+RJqZ3o         Ov3+fbApG/wL1Lr2BLdOrqaen5KagT/Hm5MRuWl+LBKZfecMSwJiP+7WupHknOsAEa6f         B+D3ctJFHgu8W6bihsDD9JZwu0FxzmbjhXfrA/UPeBo4JA9kmgwuUESlZWCexO9Vdufq         GHarFRk9iv2EdbXZ0bhx8l7MSpdMunjxyKVbLa2Kigukj1zYsa1yL095UR9ej4rly4b/         i0SQ=="}, 
+    {
+        "name": "ARC-Authentication-Results", 
+        "value": "i=2; mx.google.com;       arc=pass (i=1);       spf=pass (google.com: domain of ryu-samurai0930@outlook.jp designates 40.92.53.54 as permitted sender) smtp.mailfrom=ryu-samurai0930@outlook.jp;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=outlook.jp"}, 
+    {
+        "name": "Return-Path", 
+        "value": "<ryu-samurai0930@outlook.jp>"}, 
+    {
+        "name": "Received", 
+        "value": "from APC01-SG2-obe.outbound.protection.outlook.com (mail-sgaapc01olkn2054.outbound.protection.outlook.com. [40.92.53.54])        by mx.google.com with ESMTPS id o16-20020a170902d4d000b00170a752cae8si3147807plg.115.2022.08.18.21.02.28        for <intern.ohg.24a@gmail.com>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 18 Aug 2022 21:02:28 -0700 (PDT)"}, 
+    {
+        "name": "Received-SPF", 
+        "value": "pass (google.com: domain of ryu-samurai0930@outlook.jp designates 40.92.53.54 as permitted sender) client-ip=40.92.53.54;"}, 
+    {
+        "name": "Authentication-Results", 
+        "value": "mx.google.com;       arc=pass (i=1);       spf=pass (google.com: domain of ryu-samurai0930@outlook.jp designates 40.92.53.54 as permitted sender) smtp.mailfrom=ryu-samurai0930@outlook.jp;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=outlook.jp"}, 
+    {
+        "name": "ARC-Seal", 
+        "value": "i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none; b=ZTYF9FSmk7/IzAY1g8+oEbblXf4/g8zHWi/bdoQRemrbMB8oe/BwGfCJOaQeOVccKf+ulOY/fYOVJLF4bNm8bJ1JdYD03jxV04kl+y6iFQVXCOeKJ1BccDYzMxcFGljkO835efoM2AWDRkLvRT529eJtMGm4R13kaTY07tbDjp15cYhFLPn+QWVvbOQYgvcHKUQg2wXgI7KHttbUV/3ltHBFwzCCG7zrwbYrNW6Pr34hkZHBKSzZH8QsmBZ2gULaH/RiNYqCumvNxSYvoicvTJRkQGMBNq8nUL/Sj2JW96KTsottmRQY5Aq4LuHkSu/Tfbus/RPNvnAdKWVDd1MGQQ=="}, 
+    {
+        "name": "ARC-Message-Signature", 
+        "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; s=arcselector9901; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1; bh=jOgpzlWbKMvPggN8x4MRA7uuXA3q98FlFK3jP24fAZA=; b=jJAeRZvXHe7MpDgd8lHERmRgCnyMUvSm4VTL00YH78Zjqmil+GiiF/E2p+CQsl8JcxvNvzehvMlwYqaxialBrTSOdkIjMMK5LGSCAO9blQkerlm/SlslgZrh7gh/cwHtZggeg/h3XT+36TBOjeil1Sf/8kPRFg5VRdsWxVOl/Bo65uO1CXd1r6WKUQLrKb0cljLDQvO3yD8446KUwwSCirNJcBetFDOX5AsseIIY1Trf0qbrcJHeNtF7ACBbC/397r9xYbGgQxM1GTh6hkPfUJBmCj27Bh//hN/Q2OoBO3JxlDmi5dSpGkoA835N/lEckscdMUhzg2/3DF/YCNU8vA=="}, 
+    {
+        "name": "ARC-Authentication-Results", 
+        "value": "i=1; mx.microsoft.com 1; spf=none; dmarc=none; dkim=none; arc=none"}, 
+    {
+        "name": "Received", 
+        "value": "from TYZPR04MB4333.apcprd04.prod.outlook.com (2603:1096:400:22::14) by TY0PR04MB6328.apcprd04.prod.outlook.com (2603:1096:400:279::9) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5504.16; Fri, 19 Aug 2022 04:02:26 +0000"}, 
+    {
+        "name": "Received", 
+        "value": "from TYZPR04MB4333.apcprd04.prod.outlook.com ([fe80::a477:fa51:f33c:1fee]) by TYZPR04MB4333.apcprd04.prod.outlook.com ([fe80::a477:fa51:f33c:1fee%5]) with mapi id 15.20.5504.027; Fri, 19 Aug 2022 04:02:25 +0000"}, 
+    {
+        "name": "From", 
+        "value": ""ryu-samurai0930@outlook.jp" <ryu-samurai0930@outlook.jp>"}, 
+    {
+        "name": "To", 
+        "value": ""intern.ohg.24a@gmail.com" <intern.ohg.24a@gmail.com>"}, 
+    {
+        "name": "Subject", 
+        "value": "map"}, 
+    {
+        "name": "Thread-Topic", 
+        "value": "map"}, 
+    {
+        "name": "Thread-Index", 
+        "value": "AQHYs4B9V2014YFMO0uZ9nCnzsS9vw=="}, 
+    {
+        "name": "Date", 
+        "value": "Fri, 19 Aug 2022 04:02:25 +0000"}, 
+    {
+        "name": "Message-ID", 
+        "value": "<TYZPR04MB4333D2706C47ACBED45C4EF68E6C9@TYZPR04MB4333.apcprd04.prod.outlook.com>"}, 
+    {   
+        "name": "Accept-Language", 
+        "value": "ja-JP, en-US"}, 
+    {
+        "name": "Content-Language", 
+        "value": "ja-JP"}, 
+    {
+        "name": "X-MS-Has-Attach", 
+        "value": ""}, 
+    {
+        "name": "X-MS-TNEF-Correlator", 
+        "value": ""}, 
+    {
+        "name": "x-tmn", 
+        "value": "[Ctym1Q/YOMNztwAhIxWK+iz7Nu0jD35D]"}, 
+    {
+        "name": "x-ms-publictraffictype", 
+        "value": "Email"}, 
+    {
+        "name": "x-ms-office365-filtering-correlation-id", 
+        "value": "b8bd983c-31e7-402f-900c-08da8197a075"}, 
+    {
+        "name": "x-ms-traffictypediagnostic", 
+        "value": "TY0PR04MB6328:EE_"}, 
+    {
+        "name": "x-microsoft-antispam", 
+        "value": "BCL:0;"}, 
+    {
+        "name": "x-microsoft-antispam-message-info", 
+        "value": "GZm/ymVaOvm9Rgywbbup+NiCqAjXFB4iL2lXR5oFWIer5MY8sunEwpHVCS4VU9zQ24rrsMGU+x5XFAhVfWicX6T9i8hYbSQIQkU6eBq7MsXNCCCBgd1dRZngAxHFYTDQpBRYqSpr7y5aKRS8N4lPNvpwslKzwqLG8JsGYkWaovlRTOS47eJq1URd+Qn4wvub6eSg9RBqvdkaztukJKSgrC9UcGY6SCIogHR0NPk24kF1ThpLh4nsCQhUbTuERqvEUnjffeM+Bw7e7X8wfTqfPx5DD3LUS7SxBxNsi4uYMQtKvirgYGyFfL6lg5QyBT29JbEAQG2m1w0EUeCCiJGL+nkbNMyu48gEfDnydh9b0T5DjHlk2j3VsMM0m4scA5ya"}, 
+    {
+        "name": "x-ms-exchange-antispam-messagedata-chunkcount", 
+        "value": "1"}, 
+    {
+        "name": "x-ms-exchange-antispam-messagedata-0", 
+        "value": "1BWTK2vp2g/X4Gsvt3BkUcoetiOJak4nNcHTdUjV19mEo6GmyKlqdHw66LbHg7QbLsjzpyqfZqTnse2kgrqQpNiHYBgTJvxnnSgyNQRx+e1pIfwS60jMjJu6YnicuI766ZlxCqUEQAJpL1FX5WH8nkyp52tJAZWE4bikK5FYKWq4xGUxefEx842BiqZn3c+H020aatWVaOcgSh32du9Nv6QZ0xtoFaNiJZholW/TLJGFkZnwPTOZzejVko3pOqXbSTFXJVQGNFq1o8fwLvQ8F1BK7lFqVvKqZk+kMiYK+1IcyzGH+Lz+a1p/Narfbid/wLoL+JSTVlbfW6CvvtjRW6iYrz0TMS2QuS5PZxfiizguhSfjRGqohLhZjNuW7OvcDpWTdXYeJpFP98RroUFgUvx2+nUHhKF/8tpswtPuK3BfKtwqdNFk8fQR2TrJa/RgiKPFzOAr1aWap9hTQHzJHkZV5QCOnYcI1MkFETaxNPLGYwzF5NaATiBBJ6e7c5WGK80sUo2OgljAVBiTpUmwau9E93HB0E+EmVb0j279VnBSRZo2H+xkWov0qZ05h6KUgKtf8aufGPEWMXGHIhfsx0aiArh1l+V8rWLdGhBUdGccJWpblUpeust+3HCZH4hl3Hg38Wxfb75DRLV1i0vQCJr7CXqzALpFWhrqyDFzR9ncBpwB0HE2M93oU/ATughgcPZ7+i/E5Q0Boj+wRmAdJVy5m01MkBgvVFar8wblw1lwwTLi2CO3OODndAJn/LuqdrYynYtBXQyGYuGgYo1fhkpLIuokmoYixAL70egVcOh9TND2JSKjjgY7jdHklEGp4Rg4cSD6YVsEWnc5hQn89++CBER7KDk2fL3Nof3JWmii0ZGL8nmXhYNRZ7eIq5cHXSE2KmNC+qKBJ/E2vmmXlatGBa3syyde1QUO90KJ7XwYx3T9dpMFo/KsSqBiMTAKNm2EhKGU7rnQgFQNVKOcGohSb421K/gnmlg2ZdZcRawRvnEzl3S3GEI+FCLfcVytaVr70KIgrtsPC4rdCSkqZpn6DfXbqDG9t0NJFpWw2h0mUocNz7riRk9pAW8CsR+ht9WvqM1ck3ggtYzYUcuD1lWUjjMEF+D6GqopBBiSbOfVuV1zJVm6JGNCVjDSIZ9zNCfh/SEX1WKKTLob+Aliq68Qazc2nBdGlUf7qxnIe4on15HKMHA46132U5noQHnWzUighY+0RNCMXq4g9afZt5oVC5YbLaufCL2zu6xI14D7j9btEmm8CjIalOogtHCfIeYi3ITmrFTzZInqnQRhHGEIUnrng1Y7XLs1Dnjj0Kg="}, 
+    {
+        "name": "Content-Type", 
+        "value": "text/plain; charset="utf-8""}, 
+    {
+        "name": "Content-ID", 
+        "value": "<1C71ADF6A1A5BB4DA834273482A4DDAE@sct-15-20-4755-11-msonline-outlook-6ea25.templateTenant>"}, 
+    {
+        "name": "Content-Transfer-Encoding", 
+        "value": "base64"}, 
+    {
+        "name": "MIME-Version", 
+        "value": "1.0"}, 
+    {
+        "name": "X-OriginatorOrg", 
+        "value": "sct-15-20-4755-11-msonline-outlook-6ea25.templateTenant"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-AuthAs", 
+        "value": "Internal"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-AuthSource", 
+        "value": "TYZPR04MB4333.apcprd04.prod.outlook.com"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg", 
+        "value": "00000000-0000-0000-0000-000000000000"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-Network-Message-Id", 
+        "value": "b8bd983c-31e7-402f-900c-08da8197a075"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-originalarrivaltime", 
+        "value": "19 Aug 2022 04:02:25.8137 (UTC)"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-fromentityheader", 
+        "value": "Hosted"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-id", 
+        "value": "84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa"}, 
+    {
+        "name": "X-MS-Exchange-CrossTenant-rms-persistedconsumerorg", 
+        "value": "00000000-0000-0000-0000-000000000000"}, 
+    {
+        "name": "X-MS-Exchange-Transport-CrossTenantHeadersStamped", 
+        "value": "TY0PR04MB6328"}], 
+        
+        "body": {
+            "size": 22, 
+            "data": "DQoNCmlQaG9uZeOBi-OCiemAgeS_oQ=="}}, 
+            "sizeEstimate": 8921, 
+            "historyId": "3544", 
+            "internalDate": 
+            "1660881745000"}
