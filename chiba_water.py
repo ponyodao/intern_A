@@ -8,6 +8,9 @@ import chromedriver_binary
 
 import time
 
+address = "千葉県千葉市稲毛区穴川2丁目8番地"
+# address = "千葉県千葉市稲毛区穴川町81"
+address_water = divide_address(address)
 driver = webdriver.Chrome()
 driver.get("http://s-page.tumsy.com/chibagesui/index.html");
 time.sleep(3)
@@ -20,7 +23,7 @@ driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]').click()
 #区を選択
 s1 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]'))
 time.sleep(10)
-s1.select_by_visible_text('稲毛区')
+s1.select_by_visible_text(address_water[2])
 time.sleep(5)
 
 #町をクリック
@@ -28,7 +31,7 @@ driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]').click()
 #町を選択
 s2 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]'))
 time.sleep(10)
-s2.select_by_visible_text('穴川町')
+s2.select_by_visible_text(address_water[3])
 time.sleep(5)
 
 #丁目をクリック
@@ -36,7 +39,7 @@ driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]').click()
 #丁目ありかなしを選択
 s3 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]'))
 time.sleep(10)
-s3.select_by_visible_text('丁目なし')
+s3.select_by_visible_text(address_water[4]+'丁目')
 time.sleep(5)
 
 #番地をクリック
@@ -44,7 +47,7 @@ driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
 #番地を選択
 s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
 time.sleep(10)
-s4.select_by_visible_text('３１５番地')
+s4.select_by_visible_text(address_water[5]+"番地")
 time.sleep(5)
 
 #検索
