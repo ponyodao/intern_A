@@ -7,7 +7,7 @@ def divide_address(address):
   # 　　　　　　　　　　　あるならx=1
   x = 0
   if "丁目" in address:
-   x = 1
+    x = 1
 
   # 三つの配列に分類　match[1],match[2],match[3]
   # match[2],match[3]をさらに分類
@@ -19,7 +19,7 @@ def divide_address(address):
   if x == 0:
     return (matches[1],rematches1[1],rematches1[2],town[0],0,chome)
   else :
-    chome1 = chome.split("-")
-    chome2 = jaconv.hankaku2zenkaku(chome1[0])
-    chome3 = jaconv.hankaku2zenkaku(chome1[1])
-    return (matches[1],rematches1[1],rematches1[2],town[0],chome2,chome3)
+    splited_chome = chome.split("-")
+    chome =  splited_chome[0]
+    banchi = splited_chome[1]
+    return (matches[1],rematches1[1],rematches1[2],town[0],chome,banchi)
