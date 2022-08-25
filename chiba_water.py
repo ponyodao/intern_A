@@ -6,6 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from divide_address import divide_address
 from selenium.webdriver.support.select import Select
 import chromedriver_binary
+from PIL import Image
 
 import time
 
@@ -57,14 +58,19 @@ def chiba_water(address):
     print(all_options)
     time.sleep(3)
     zenkaku_banchi = jaconv.h2z(address_water[5], kana=False, ascii=False, digit=True)
-    if "番地" in all_options[1].text:
-      s4.select_by_visible_text(zenkaku_banchi+"番地")
-    else:
-      s4.select_by_visible_text(zenkaku_banchi+"番")
+    s4.select_by_visible_text(zenkaku_banchi+"番")
+    # if "番地" in all_options[1].text:
+    #   s4.select_by_visible_text(zenkaku_banchi+"番地")
+    # else:
+    #   s4.select_by_visible_text(zenkaku_banchi+"番")
     time.sleep(3)
 
     #検索
     driver.find_element(By.XPATH, '//*[@id="btnAddSchDlgOK"]').click()
     time.sleep(3)
     #スクリーンショット
-    driver.save_screenshot(r"C:/Users/ryu-s/OneDrive/ドキュメント/就活/インターン/オープンハウス　インターン資料/オープンハウス　システム/RPA/intern_A/image/chiba_water.png")
+    driver.save_screenshot(r"C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\chiba_water.png")
+    #pdf変換
+    image = Image.open(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_water.png")
+    im_pdf = image.convert("RGB")
+    im_pdf.save(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_water.pdf")
