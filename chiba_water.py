@@ -53,9 +53,14 @@ def chiba_water(address):
     driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
     #番地を選択
     s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
+    all_options = Select.options
+    print(all_options)
     time.sleep(3)
     zenkaku_banchi = jaconv.h2z(address_water[5], kana=False, ascii=False, digit=True)
-    s4.select_by_visible_text(zenkaku_banchi+"番地")
+    if "番地" in all_options[1].text:
+      s4.select_by_visible_text(zenkaku_banchi+"番地")
+    else:
+      s4.select_by_visible_text(zenkaku_banchi+"番")
     time.sleep(3)
 
     #検索

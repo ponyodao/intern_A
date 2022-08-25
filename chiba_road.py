@@ -31,12 +31,12 @@ def chiba_road(address):
     time.sleep(3)
     #稲毛区を選択
     s1 = Select(driver.find_element(By.XPATH, '//*[@id="srh_search_drilldown_1_attrvalue_1"]'))
-    time.sleep(10)
+    time.sleep(5)
     s1.select_by_value(address_road[2])
-    time.sleep(10)
+    time.sleep(5)
     #穴川町を検索
     s2 = Select(driver.find_element(By.XPATH, '//*[@id="srh_search_drilldown_1_attrvalue_2"]'))
-    time.sleep(10)
+    time.sleep(5)
     if address_road[4] == 0:
       s2.select_by_value(address_road[3])
     else:
