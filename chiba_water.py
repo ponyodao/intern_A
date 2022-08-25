@@ -1,4 +1,5 @@
 #千葉県下水
+import jaconv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -8,61 +9,62 @@ import chromedriver_binary
 
 import time
 
-driver = webdriver.Chrome()
-driver.get("http://s-page.tumsy.com/chibagesui/index.html");
-time.sleep(3)
-iframe = driver.find_element(By.XPATH,'/html/frameset/frame')
-driver.switch_to.frame(iframe)
-driver.find_element(By.XPATH, '//*[@id="LinkButton1"]').click()
-time.sleep(3)
-#区をクリック
-driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]').click()
-#区を選択
-s1 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]'))
-time.sleep(10)
-s1.select_by_visible_text('稲毛区')
-time.sleep(5)
+# address = "千葉県千葉市稲毛区穴川2丁目8番地"
+# address = "千葉県千葉市稲毛区穴川町371"
 
-#町をクリック
-driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]').click()
-#町を選択
-s2 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]'))
-time.sleep(10)
-s2.select_by_visible_text('穴川町')
-time.sleep(5)
+def chiba_water(address):
+    address_water = divide_address(address)
+    driver = webdriver.Chrome()
+    driver.get("http://s-page.tumsy.com/chibagesui/index.html");
+    time.sleep(5)
+    iframe = driver.find_element(By.XPATH,'/html/frameset/frame')
+    driver.switch_to.frame(iframe)
+    driver.find_element(By.XPATH, '//*[@id="LinkButton1"]').click()
+    time.sleep(7)
+    #区をクリック
+    driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]').click()
+    #区を選択
+    s1 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV1"]'))
+    time.sleep(3)
+    s1.select_by_visible_text(address_water[2])
+    time.sleep(3)
 
-#丁目をクリック
-driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]').click()
-#丁目ありかなしを選択
-s3 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]'))
-time.sleep(10)
-s3.select_by_visible_text('丁目なし')
-time.sleep(5)
+    #町をクリック
+    driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]').click()
+    #町を選択
+    s2 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]'))
+    time.sleep(3)
+    s2.select_by_visible_text(address_water[3])
+    time.sleep(3)
 
-#番地をクリック
-driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
-#番地を選択
-s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
-time.sleep(10)
-s4.select_by_visible_text('３１５番地')
-time.sleep(5)
+    #丁目をクリック
+    driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]').click()
+    #丁目ありかなしを選択
+    s3 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]'))
+    time.sleep(3)
+    if address_water[4] == 0:
+        s3.select_by_visible_text('丁目なし')
+    else:
+        zenkaku_chome = jaconv.h2z(address_water[4], kana=False, ascii=False, digit=True)
+        s3.select_by_visible_text(zenkaku_chome+'丁目')
+    time.sleep(3)
 
-#検索
-driver.find_element(By.XPATH, '//*[@id="btnAddSchDlgOK"]').click()
-time.sleep(5)
-#スクリーンショット
-driver.save_screenshot(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_water.png")
+    #番地をクリック
+    driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
+    #番地を選択
+    s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
+    all_options = Select.options
+    print(all_options)
+    time.sleep(3)
+    zenkaku_banchi = jaconv.h2z(address_water[5], kana=False, ascii=False, digit=True)
+    if "番地" in all_options[1].text:
+      s4.select_by_visible_text(zenkaku_banchi+"番地")
+    else:
+      s4.select_by_visible_text(zenkaku_banchi+"番")
+    time.sleep(3)
 
-
-
-
-
-# if matches[1] == '中央区':
-#     select.select_by_index(1)
-
-# time.sleep(5)
-
-# driver.find_element(By.XPATH, '//*[@id="searchboxinput"]').send_keys("ginza six")
-# driver.save_screenshot('screen.png')
-# driver.save_screenshot('screen/screen2.png')
-# time.sleep(5)
+    #検索
+    driver.find_element(By.XPATH, '//*[@id="btnAddSchDlgOK"]').click()
+    time.sleep(3)
+    #スクリーンショット
+    driver.save_screenshot(r"C:/Users/ryu-s/OneDrive/ドキュメント/就活/インターン/オープンハウス　インターン資料/オープンハウス　システム/RPA/intern_A/image/chiba_water.png")
