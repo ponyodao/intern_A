@@ -51,6 +51,8 @@ def chiba_road(address):
     time.sleep(3)
     driver.find_element(By.XPATH, '//*[@id="srh_search_drilldown_1_btn"]').click() ##最後の検索
     time.sleep(3)
+    #拡大図を消す
+    driver.find_element(By.XPATH, '//*[@id="index_hidden"]').click()
     driver.save_screenshot(r"C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\chiba_road.png")
     #pdf変換
     image = Image.open(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_road.png")
