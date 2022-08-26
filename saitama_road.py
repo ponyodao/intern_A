@@ -20,8 +20,8 @@ def saitama_road(address):
     driver.switch_to.frame(iframe)
     driver.find_element(By.XPATH, '//*[@id="agree_btn_area"]/ul/li[1]/a').click()
     time.sleep(5)
-    driver.save_screenshot(r"C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\saitama_road.png")
+    driver.save_screenshot(".\\img\\saitama_road.png")
    #pdf変換
-    image = Image.open(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\saitama_road.png")
+    image = Image.open(".\\img\\saitama_road.png")
     im_pdf = image.convert("RGB")
-    im_pdf.save(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\saitama_road.pdf")
+    im_pdf.save(".\\img\\saitama_road.pdf")
