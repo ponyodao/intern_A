@@ -29,7 +29,6 @@ def chiba_water(address):
     time.sleep(3)
     s1.select_by_visible_text(address_water[2])
     time.sleep(3)
-
     #町をクリック
     driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV2"]').click()
     #町を選択
@@ -37,40 +36,44 @@ def chiba_water(address):
     time.sleep(3)
     s2.select_by_visible_text(address_water[3])
     time.sleep(3)
-
     #丁目をクリック
     driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]').click()
-    #丁目ありかなしを選択
     s3 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV3"]'))
     time.sleep(3)
-    if address_water[4] == 0:
+    #丁目ありかなしを選択
+    if len(address_water) == 5:
         s3.select_by_visible_text('丁目なし')
+        time.sleep(3)
+        driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
+        s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
+        all_options = s4.options
+        time.sleep(3)
+        zenkaku_banchi = jaconv.h2z(address_water[4], kana=False, ascii=False, digit=True)
+        if "番地" in all_options[1].text:
+         s4.select_by_visible_text(zenkaku_banchi+"番地")
+        else:
+         s4.select_by_visible_text(zenkaku_banchi+"番")
     else:
         zenkaku_chome = jaconv.h2z(address_water[4], kana=False, ascii=False, digit=True)
         s3.select_by_visible_text(zenkaku_chome+'丁目')
+        time.sleep(3)
+        driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
+        s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
+        all_options = s4.options
+        time.sleep(3)
+        zenkaku_banchi = jaconv.h2z(address_water[5], kana=False, ascii=False, digit=True)
+        if "番地" in all_options[1].text:
+          s4.select_by_visible_text(zenkaku_banchi+"番地")
+        else:
+          s4.select_by_visible_text(zenkaku_banchi+"番")
     time.sleep(3)
-
-    #番地をクリック
-    driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]').click()
-    #番地を選択
-    s4 = Select(driver.find_element(By.XPATH, '//*[@id="ELM_CMB_LEV4"]'))
-    all_options = Select.options
-    print(all_options)
-    time.sleep(3)
-    zenkaku_banchi = jaconv.h2z(address_water[5], kana=False, ascii=False, digit=True)
-    s4.select_by_visible_text(zenkaku_banchi+"番")
-    # if "番地" in all_options[1].text:
-    #   s4.select_by_visible_text(zenkaku_banchi+"番地")
-    # else:
-    #   s4.select_by_visible_text(zenkaku_banchi+"番")
-    time.sleep(3)
-
     #検索
     driver.find_element(By.XPATH, '//*[@id="btnAddSchDlgOK"]').click()
     time.sleep(3)
+
     #スクリーンショット
-    driver.save_screenshot(r"C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\chiba_water.png")
+    driver.save_screenshot(".\\img\\chiba_water.png")
     #pdf変換
-    image = Image.open(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_water.png")
+    image = Image.open(".\\img\\chiba_water.png")
     im_pdf = image.convert("RGB")
-    im_pdf.save(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\chiba_water.pdf")
+    im_pdf.save(".\\img\\chiba_water.pdf")

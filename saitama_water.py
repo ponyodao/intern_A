@@ -27,8 +27,8 @@ def saitama_water(address):
 
     time.sleep(7)
 
-    driver.save_screenshot(r"C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\saitama_water.png")
+    driver.save_screenshot(".\\img\\saitama_water.png")
        #pdf変換
-    image = Image.open(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\saitama_water.png")
+    image = Image.open(".\\img\\saitama_water.png")
     im_pdf = image.convert("RGB")
-    im_pdf.save(r"C:\Users\ryo2001\OneDrive - 同志社大学\デスクトップ\エンカレッジ\オープンハウス\test\RPA\intern_A\img\saitama_water.pdf")
+    im_pdf.save(".\\img\\saitama_water.pdf")
