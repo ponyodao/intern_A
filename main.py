@@ -26,26 +26,36 @@ while True:
             if("千葉県" in address and "千葉市" in address):
                 
                 t1 = time.time()
-                chiba_water(address)
-                chiba_road(address)
-                # th1 = threading.Thread(target = chiba_water(address))
-                # th2 = threading.Thread(target = chiba_road(address))
+                # chiba_water(address)
+                # chiba_road(address)
+                th1 = threading.Thread(target = chiba_water(address))
+                th2 = threading.Thread(target = chiba_road(address))
                
-                # th1.start()
-                # th2.start()
-                send_mail("intern.ohg.24a@gmail.com", sender, "千葉の下水道地図情報", "", "C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\chiba_water.pdf", cc=None)
-                send_mail("intern.ohg.24a@gmail.com", sender, "千葉の道路地図情報", "", "C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\chiba_road.pdf", cc=None)
+                th1.start()
+                th2.start()
+                send_mail("intern.ohg.24a@gmail.com", sender, "千葉の下水道地図情報", "", ".\\img\\chiba_water.pdf", cc=None)
+                send_mail("intern.ohg.24a@gmail.com", sender, "千葉の道路地図情報", "", ".\\img\\chiba_road.pdf", cc=None)
                 t2 = time.time()
 
                 elapsed_time = t2-t1
                 print(f'経過時間：{elapsed_time}')
             elif("埼玉県" in address and "さいたま市" in address):
                 
-                saitama_water(address)
-                send_mail("intern.ohg.24a@gmail.com", sender, "埼玉の下水道地図情報", "", "C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\saitama_water.pdf", cc=None)
+                t1=time.time()#計測開始
+                # saitama_water(address)
+                # saitama_road(address)
+                th1 = threading.Thread(target = saitama_water(address))
+                th2 = threading.Thread(target = saitama_road(address))
+                th1.start()
+                th2.start()
                 
-                saitama_road(address)
-                send_mail("intern.ohg.24a@gmail.com", sender, "埼玉の道路地図情報", "", "C:\\Users\\ryo2001\\OneDrive - 同志社大学\\デスクトップ\\エンカレッジ\\オープンハウス\\test\\RPA\\intern_A\\img\\saitama_road.pdf", cc=None)
+                send_mail("intern.ohg.24a@gmail.com", sender, "埼玉の下水道地図情報", "", ".\\img\\chiba_water.pdf", cc=None)
+                send_mail("intern.ohg.24a@gmail.com", sender, "埼玉の道路地図情報", "", ".\\img\\chiba_water.pdf", cc=None)
+                
+                t2=time.time()#計測終了
+
+                elapsed_time = t2-t1
+                print(f'経過時間：{elapsed_time}')
             else:
                 send_mail("intern.ohg.24a@gmail.com", sender, "", "県名から正確な住所を入力してください。", "", cc=None)
         
